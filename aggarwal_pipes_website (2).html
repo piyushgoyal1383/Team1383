@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aggarwal Pipes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    header {
+      background: #1f1f1f;
+      color: #ffffff;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      background: #2b2b2b;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 1rem;
+    }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 2rem;
+      background-color: #1e1e1e;
+      margin: 1rem;
+      border-radius: 8px;
+    }
+    .products img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border: 2px solid #333;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+      margin: auto;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    .contact-details {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    #main-content { display: none; }
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #121212;
+    }
+    .login-box {
+      background: #1f1f1f;
+      padding: 2rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      border-radius: 8px;
+      color: #fff;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 0.5rem;
+      margin: 0.5rem 0;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+    }
+    .login-box button {
+      padding: 0.5rem 1rem;
+      background-color: #444;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background-color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div id="login-page" class="login-container">
+    <div class="login-box">
+      <h2>Login to Aggarwal Pipes</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <header>
+      <h1>Aggarwal Pipes</h1>
+      <p>Quality Pipes for Every Purpose</p>
+    </header>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="home">
+      <h2>Welcome to Aggarwal Pipes</h2>
+      <p>We manufacture and supply the best quality pipes for residential, commercial, and industrial use.</p>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Aggarwal Pipes is a trusted name in the industry, known for durability, reliability, and excellent customer service.</p>
+    </section>
+
+    <section id="products">
+      <h2>Our Products</h2>
+      <div class="products">
+        <p>We offer a wide range of pipes including:</p>
+        <ul>
+          <li>UPVC Pipes</li>
+          <li>CPVC Pipes</li>
+          <li>HDPE Pipes</li>
+          <li>Water Supply Pipes</li>
+        </ul>
+        <img src="https://via.placeholder.com/300x200?text=Pipe+Image" alt="Pipe product">
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="contact-details">
+        <p><strong>Address:</strong> Aggarwal pipes badbar,barnala,punjab</p>
+        <p><strong>Phone:</strong> +91 79860****</p>
+        <p><strong>Email:</strong> piyushgoyal122009@gmail.com</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Aggarwal Pipes. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function login() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const credentials = [
+        { username: "admin", password: "123456" },
+        { username: "piyushgoyal", password: "piyush_1383" },
+        { username: "parshavgoyal", password: "parshav1218" },
+        { username: "narindergoyal", password: "narinder1987" },
+        { username: "sayamjain", password: "jain1234" }
+      ];
+
+      const isValid = credentials.some(cred => cred.username === username && cred.password === password);
+
+      if (isValid) {
+        document.getElementById("login-page").style.display = "none";
+        document.getElementById("main-content").style.display = "block";
+      } else {
+        alert("Invalid username or password.");
+      }
+    }
+  </script>
+</body>
+</html>
